@@ -40,19 +40,21 @@ class DefaultController
 
 	public function yearMenu()
 	{
-		$yearManager = new \Model\Manager\YearManager();
-		$year =$yearManager->year();
-		include("app/templates/base.php");
+		$yearManager = new \Model\Manager\DemoManager();
+		$year =$yearManager->findAllYear();
+		include("app/templates/yearMenu.php");
 
 	}
 
 	public static function genderMenu()
 	{
-		$genderManager = new \Model\Manager\GenderManager();
-    $genres = $genderManager->findAll();
-    include("app/templates/base.php");
+		$genderManager = new \Model\Manager\DemoManager();
+    $genres = $genderManager->findAllGender();
+    include("app/templates/genderMenu.php");
 
 	}
+
+	
 
 	/**
 	 * Affiche la page d'erreur 404

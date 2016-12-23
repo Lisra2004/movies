@@ -172,4 +172,25 @@ class DemoManager
     $stmt->execute();
   }
 
+  public function findAllGender()
+  {
+    $sql = "SELECT * FROM genres";
+
+    $dbh = Db::getDbh();
+    $stmt = $dbh->prepare($sql);
+    $stmt->execute();
+    $genres = $stmt->fetchAll();
+    return $genres;
+  }
+
+  public function findAllYear()
+  {
+    $sql = "SELECT DISTINCT year FROM movie";
+    $dbh = Db::getDbh();
+    $stmt = $dbh->prepare($sql);
+    $stmt->execute();
+    $years = $stmt->fetchAll();
+    return $years;
+  }
+
 }

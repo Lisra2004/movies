@@ -14,10 +14,10 @@
 		<h1>Bienvenue sur XYZ</h1>
 					<blockquote>
 					  <p>le 1er site de notation de films</p>
-						<a href="<?php include("app/Controller/InscriptionUser.php") ?>">Inscription</a>
+						<a href="<?= BASE_URL ?>inscription">Inscription</a>
 					</blockquote>
 			<ul class="nav nav-tabs">
-			  <li role="presentation" class="home"><a href="<?= BASE_URL ?>home">Accueil</a></li>		<!-- A REVOIR -->
+			  <li role="presentation" class="home"><a href="<?= BASE_URL ?>">Accueil</a></li>		<!-- A REVOIR -->
 			</ul>
 	</header>
 	<nav class="navbar navbar-default">
@@ -36,11 +36,7 @@
           <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gender <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="	<?php foreach($genres as $genre): ?>
-						  						<?= $genre['name']; ?>
-													<?php endforeach; ?>"><?php foreach($genres as $genre): ?>
-						  																	<?= $genre['name']; ?>
-																							<?php endforeach; ?></a></li> <!-- faire 1 boucle while pour avoir tous les resultats-->
+            <li><a href="<?php include("app/templates/genderMenu.php") ?>"><?php include("app/templates/genderMenu.php") ?></a></li> <!-- ajout resultats ds url-->
 
           </ul>
         </li>
@@ -49,11 +45,7 @@
           <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Year <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="	<?php foreach($years as $year): ?>
-						  						<?= $year['year']; ?>
-													<?php endforeach; ?>"><?php foreach($years as $year): ?>
-						  																	<?= $year['year']; ?>
-																								<?php endforeach; ?></a></li> <!-- faire 1 boucle while pour avoir tous les resultats-->
+            <li><a href="<?php include("app/templates/yearMenu.php") ?>"><?php include("app/templates/yearMenu.php") ?></a></li> <!-- ajout resultats ds url-->
 
           </ul>
         </li>

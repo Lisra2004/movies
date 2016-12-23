@@ -15,14 +15,15 @@
 	*/
 
 	$routes = [
-		"/" => "home",
-		"/search" => "search",
-		"/movie" => "movie",
-		"/watchlist" => "watchlist",
-		"/admin/accueil" => "admin/accueil",
-		"/admin/movie" =>"admin/movie",
-		"/admin/update" => "admin/update",
-		"/admin/addmovie" => "admin/addmovie",
-		"/admin/addgender" => "admin/addgender",
+		"/" => "DefaultController#home",
+		"/search" => "DefaultController#search",
+		"/movie" => "DefaultController#movie",
+		"/watchlist" => "DefaultController#watchlist",
+		"/inscription" => "InscriptionUser#inscription", // fichier controller different des autres
+		"/admin/accueil" => "DefaultController#admin/accueil",
+		"/admin/movie" =>"DefaultController#admin/movie",
+		"/admin/update" => "DefaultController#admin/update",
+		"/admin/addmovie" => "DefaultController#admin/addmovie",
+		"/admin/addgender" => "DefaultController#admin/addgender",
 
 	];

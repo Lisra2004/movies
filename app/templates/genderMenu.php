@@ -1,3 +1,5 @@
-<?php foreach($genres as $genre): ?>
-  <?= $genre['name']; ?>
-<?php endforeach; ?>
+<?php foreach($genres as $genre)
+{
+  $genre['name'];
+}
+?>
