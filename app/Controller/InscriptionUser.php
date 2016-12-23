@@ -1,13 +1,18 @@
 <?php
 
-	namespace Controller;
+namespace Controller;
+
+use \Model\Manager\DemoManager;
+use \Model\Manager\UserManager;
+use \Model\Entity\Users;
+
 
 class InscriptionUser
 {
 
 	public function inscription()
 	{
-		$create = new \Model\Entity\Demo();
+		$users = new \Model\Entity\Users();
 
 		if (!empty($_POST)){
 
@@ -42,11 +47,14 @@ class InscriptionUser
 		// echo $token;
 		//stocker ce token avec le user...
 
-			$create->setUsername( $_POST['username'] );
-			$create->setEmail( $_POST['email'] );
-			$create->setPwd( $passwordHash() );
-			$create->setToken($token());
-			$create->setRole($role());
+			$users->setUsername( $_POST['username'] );
+			$users->setEmail( $_POST['email'] );
+			$users->setPwd( $passwordHash );
+			$users->setToken($token);
+			$users->setRole($role);
+
+			$userManager = new UserManager();
+			$userManager->createUser($users);
 		}
 	}
 }
@@ -82,7 +90,7 @@ class InscriptionUser
 			</div>
 			<div>
 				<label for="pwd_bis">Mot de passe encore</label>
-				<input type="pwd" name="pwd_bis" id="pwd_bis" value="">
+				<input type="password" name="pwd_bis" id="pwd_bis" value="">
 			</div>
 			<div>
 				<button type="submit">M'inscrire !</button>

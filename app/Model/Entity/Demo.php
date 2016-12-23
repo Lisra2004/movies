@@ -20,15 +20,7 @@ class Demo
 	private $runtime;
 	private $trailerUrl;
 	private $genre;
-	private $iduser;
-  private $username;
-  private $pwd;
-  private $email;
-  private $idMovieUser;
-  private $ratingUser;
-  private $idWatchlist;
-	private $role;
-	private $token;
+
 
 
 	/**
@@ -242,123 +234,7 @@ class Demo
         return $this;
     }
 
-		public function getIduser()
-    {
-        return $this->iduser;
-    }
-
-
-    public function setIduser($iduser)
-    {
-        $this->iduser = $iduser;
-
-        return $this;
-    }
-
-		public function getUsername()
-    {
-        return $this->username;
-    }
-
-
-    public function setUsername($username)
-    {
-        $this->username = $username;
-
-        return $this;
-    }
-
-		public function getPwd()
-    {
-        return $this->pwd;
-    }
-
-
-    public function setPwd($pwd)
-    {
-        $this->pwd = $pwd;
-
-        return $this;
-    }
-
-		public function getEmail()
-    {
-        return $this->email;
-    }
-
-
-    public function setEmail($email)
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
-		public function getIdMovieUser()
-    {
-        return $this->idMovieUser;
-    }
-
-
-    public function setIdMovieUser($idMovieUser)
-    {
-        $this->idMovieUser = $idMovieUser;
-
-        return $this;
-    }
-
-		public function getRatingUser()
-    {
-        return $this->ratingUser;
-    }
-
-
-    public function setRatingUser($ratingUser)
-    {
-        $this->ratingUser = $ratingUser;
-
-        return $this;
-    }
-
-		public function getIdWatchlist()
-    {
-        return $this->idWatchlist;
-    }
-
-
-    public function setIdWatchlist($idWatchlist)
-    {
-        $this->idWatchlist = $idWatchlist;
-
-        return $this;
-    }
-
-		public function getRole()
-    {
-        return $this->role;
-    }
-
-
-    public function setRole($role)
-    {
-        $this->role = $role;
-
-        return $this;
-    }
-
-		public function getToken()
-    {
-        return $this->token;
-    }
-
-
-    public function setToken($token)
-    {
-        $this->token = $token;
-
-        return $this;
-    }
-
+	
 
 
 }

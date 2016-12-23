@@ -4,22 +4,26 @@ namespace Model\Manager;
 
 use Model\Db;
 use PDO;
+use \Model\Entity\Demo;
+use \Model\Entity\Users;
 
 
 class UserManager
 {
 // METTRE EN PLACE INSCRIPTION ET AUTHENTIFICATION
-  public function createUser(Login $username)
+  public function createUser($users)
   {
-    $sql = "INSERT INTO users (username, pwd, email)
-            VALUES (:username, :pwd, :email)";
+    $sql = "INSERT INTO users (username, pwd, email, token, role)
+            VALUES (:username, :pwd, :email, :token, :role)";
 
     $dbh = Db::getDbh();
     $stmt = $dbh->prepare($sql);
-    $stmt->bindValue(":username", $username->getUsername() );
-    $stmt->bindValue(":pwd", $pwd->getPwd());
-    $stmt->bindValue(":email", $email->getEmail());
-    $stmt->execute();
+    $stmt->bindValue(":username", $users->getUsername() );
+    $stmt->bindValue(":pwd", $users->getPwd());
+    $stmt->bindValue(":email", $users->getEmail());
+    $stmt->bindValue(":token", $users->getToken());
+    $stmt->bindValue(":role", $users->getRole());
+    return $stmt->execute();
 
   }
 
